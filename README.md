@@ -15,9 +15,9 @@ it running as well by
 ```
 docker-compose up 
 ```
-* Second issue 
 
-i don't have k8s on my machine so i decide to Run it in EKS 
+
+## I Run it in EKS 
   * create an EC2 instance and create the EKS by the following steps 
   * install kubectl 
   * create the eks using eksctl 
@@ -37,9 +37,16 @@ Using Kompose tool [kompose](https://kompose.io/):
 build Drkiq image and upload it to dockerhub to use it in our deployment file.
 
 ## Apply the yaml files 
-  ## issues displayied during the applying
+* Issues happed during the applying 
+  
   * Postgres pod crashed and it's happed because 
 ```
           name: PGDATA
           value: /var/lib/postgresql/data/pgdata
-```          
+```
+  * Drkiq Pod cann't connected to the Postgres DB 
+ Error
+ ```
+ database "drkiq_development" does not exist
+ ```
+  i Solve it by creating job to create the Databas inside postgres pod
