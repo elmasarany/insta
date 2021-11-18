@@ -39,7 +39,7 @@ build Drkiq image and upload it to dockerhub to use it in our deployment file.
 ## Apply the yaml files 
 * Issues happed during the applying 
   
-  * Postgres pod crashed and it's happed because 
+  * Postgres pod crashed and it's happed because following two line was not exis.
 ```
           name: PGDATA
           value: /var/lib/postgresql/data/pgdata
@@ -49,4 +49,5 @@ build Drkiq image and upload it to dockerhub to use it in our deployment file.
  ```
  database "drkiq_development" does not exist
  ```
-  i Solve it by creating job to create the Databas inside postgres pod
+  i Solve it by creating job to create the Database inside postgres pod.
+   
