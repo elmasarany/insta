@@ -27,9 +27,15 @@ spec:
       containers:
         - env:
             - name: POSTGRES_PASSWORD
-              value: test_db_password
+              valueFrom:
+                secretKeyRef:
+                  key: POSTGRES_PASSWORD
+                  name: database-secret
             - name: POSTGRES_USER
-              value: drkiq
+              valueFrom:
+                secretKeyRef:
+                  key: POSTGRES_USER
+                  name: database-secret       
             - name: PGDATA
               value: /var/lib/postgresql/data/pgdata
           image: postgres:12.1
