@@ -1,0 +1,16 @@
+ apiVersion: batch/v1
+kind: Job
+metadata:
+  name: createdb
+spec:
+  template:
+    spec:
+      containers:
+      - name: createdb
+        image: postgres:12.1
+        command: ["createdb"]
+        args: ["-h","postgres", "-U", "drkiq", "drkiq_development" ]
+        env:
+        - name: PGPASSWORD
+          value: test_db_password
+      restartPolicy: Never
