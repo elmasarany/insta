@@ -30,6 +30,8 @@ spec:
               value: test_db_password
             - name: POSTGRES_USER
               value: drkiq
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
           image: postgres:12.1
           name: postgres
           ports:
