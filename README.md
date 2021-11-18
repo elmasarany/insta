@@ -1,9 +1,9 @@
 # Task
 ## Requirement to build ROR as given in document and convert it to k8s 
 * First Issue
-it doesn't work as writen in read mefile of the repo 
-i had follow the documentation and apply it step by step 
-issue caused by initializing and migrate database.
+it doesn't work as writen in README file of the repo 
+i followed the documentation and applied it step by step. 
+issue was caused by initializing and migrating database.
 ```
 vi config/db/schema.rb
 
@@ -32,6 +32,9 @@ i don't have k8s on my machine so i decide to Run it in EKS
 
 ## convert Docker Compose to k8s
 Using Kompose tool [kompose](https://kompose.io/):
+
+## Build Drkiq Image
+build Drkiq image and upload it to dockerhub to use it in our deployment file.
 
 ## Apply the yaml files 
   ## issues displayied during the applying
